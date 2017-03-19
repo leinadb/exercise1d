@@ -14,10 +14,11 @@ public class Calculator {
         if (values == null || values.length == 0) {
         	throw new IllegalArgumentException("Null or empty argument: "+values);
         };
-        int result = 0;
-        for (int value: values) {
-        	if (value > result) {
-        		result = value;
+
+        int result = values[0];
+        for (int i = 1; i < values.length; ++i) {
+        	if (values[i] > result) {
+        		result = values[i];
         	}
         }
         return result;
